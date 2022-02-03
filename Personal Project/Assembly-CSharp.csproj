@@ -54,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMove.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
+     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
+     <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>/Users/game34/Desktop/Create with code/Personal Project/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
