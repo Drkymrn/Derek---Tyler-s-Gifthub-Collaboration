@@ -14,25 +14,41 @@ public class PlayerController : MonoBehaviour
     private float forwardInput;
     [SerializeField] UIController uiController;
     public float jumpForce;
+
     private float xRange = 25.0f;
     private float zRange = 25.0f;
     public float RotateSpeed = 3.0f;
+    //Added health variables here
+    public int maxHealth = 5;
+    public int health {get { return currentHealth;}}
+    int currentHealth = 5;
+    public float timeInvincible = 2.0f;
+    bool isInvincible;
+    float invincibleTimer;
+
+    //Added projectile variable
+    public GameObject projectile;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        Debug.Log("Health: " + currentHealth + "/" + maxHealth);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver){
+        if(Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
+        {
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
-         }
+        }
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
-
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject shot = Instantiate(projectile, transform.position + (transform.forward * 2), shot.GetComponent<Rigidbody>().AddForce(transform.forward * 2000));
+        }
         //rotate player
         transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
 
