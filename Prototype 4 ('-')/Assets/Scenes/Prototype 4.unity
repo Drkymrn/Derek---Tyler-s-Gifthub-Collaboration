@@ -449,12 +449,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191008156}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: fdf813ba104c6402d9b5f2f8ca69819f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   hasPowerup: 0
   powerupIndicator: {fileID: 668305464}
+=======
+  m_Script: {fileID: 11500000, guid: 11fe4f63ef8ae4fcf89b1aa66a1b7ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+>>>>>>> Stashed changes
 --- !u!1 &1211016355
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +610,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 10, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< Updated upstream
   m_Father: {fileID: 5563573}
+=======
+  m_Father: {fileID: 1485462164}
+>>>>>>> Stashed changes
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!1001 &1403545340
@@ -695,7 +706,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8878a37eb67ddac4ead51890a31d6a18, type: 3}
+<<<<<<< Updated upstream
 --- !u!1 &1625083425
+=======
+--- !u!1 &1485462162
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -703,21 +718,33 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1625083427}
   - component: {fileID: 1625083426}
   m_Layer: 0
   m_Name: Spawn Manager
+=======
+  - component: {fileID: 1485462164}
+  - component: {fileID: 1485462163}
+  m_Layer: 0
+  m_Name: Focal Point
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!114 &1625083426
+=======
+--- !u!114 &1485462163
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1625083425}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -730,11 +757,22 @@ MonoBehaviour:
   powerupPrefab: {fileID: 1851716076}
   enemyCount: 3
 --- !u!4 &1625083427
+=======
+  m_GameObject: {fileID: 1485462162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f068c3256f8e847bd80bd3aa07e784f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+--- !u!4 &1485462164
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1625083425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6.3}
@@ -823,6 +861,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d623f4e573740ddb1a04c2e5bf4626, type: 3}
+=======
+  m_GameObject: {fileID: 1485462162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1211419928}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &7305732181041295649
 PrefabInstance:
   m_ObjectHideFlags: 0

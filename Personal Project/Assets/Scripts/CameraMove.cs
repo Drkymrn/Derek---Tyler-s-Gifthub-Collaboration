@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public Transform target;
-    private Vector3 offsetPosition = new Vector3(0, 4, -10);
+    private Vector3 offsetPosition = new Vector3(1, 4, -10);
     private Space offsetPositionSpace = Space.Self;
     private bool lookAt = true;
     // Start is called before the first frame update
