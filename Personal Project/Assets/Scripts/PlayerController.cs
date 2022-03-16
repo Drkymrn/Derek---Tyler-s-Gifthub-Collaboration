@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
+    public Transform respawnPosition;
 
     //Added projectile variable
-    public GameObject projectile;
+    public GameObject projectilePrefab;
+    public ParticleSystem hitParticle;
+    Vector3 lookDirection = new Vector3(1, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical");
         if(Input.GetKeyDown(KeyCode.E))
         {
-            GameObject shot = Instantiate(projectile, transform.position + (transform.forward * 2), shot.GetComponent<Rigidbody>().AddForce(transform.forward * 2000));
+          LaunchProjectile();
         }
         //rotate player
         transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
@@ -98,5 +101,43 @@ public class PlayerController : MonoBehaviour
             
             Destroy(collision.gameObject);
         }
+  
+    }         // ===================== HEALTH ==================
+    public void ChangeHealth(int amount)
+    {
+        if (amount < 0)
+        { 
+            if (isInvincible)
+                return;
+            
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+            
+          
+
+            Instantiate(hitParticle, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        }
+        
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        
+        if(currentHealth == 0)
+            Respawn();
+        
+        //UIHealthBar.Instance.SetValue(currentHealth / (float)maxHealth);
+    }
+      void Respawn()
+    {
+        ChangeHealth(maxHealth);
+        transform.position = respawnPosition.position;
+    }
+      // =============== PROJECTICLE ========================
+    void LaunchProjectile()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, playerRB.position + Vector3.up * 0.5f, Quaternion.identity);
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 300);
+        
+      
     }
 }
