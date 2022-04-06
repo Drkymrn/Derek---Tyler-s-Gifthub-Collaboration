@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
      int MoveDist = 20;
      int AttackDist = 5;
       GameObject player;
+      public ParticleSystem smokeParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class EnemyController : MonoBehaviour
         }
         if (transform.position.y <-10){
             Destroy(gameObject);
+            smokeParticle.Play();
         }
     }
     void OnCollisionEnter(Collision other)

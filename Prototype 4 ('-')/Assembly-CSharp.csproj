@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
      <Compile Include="Assets\Challenge 4\Scripts\EnemyX.cs" />
      <Compile Include="Assets\Challenge 4\Scripts\PlayerControllerX.cs" />
      <Compile Include="Assets\Challenge 4\Scripts\RotateCameraX.cs" />
@@ -62,13 +61,10 @@
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\RotateCamera.cs" />
      <Compile Include="Assets\Script\SpawnManager.cs" />
-     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
-     <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
-=======
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RotateCamera.cs" />
      <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
->>>>>>> Stashed changes
+     <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>/Users/game34/Desktop/Create with code/Prototype 4 (&apos;-&apos;)/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>

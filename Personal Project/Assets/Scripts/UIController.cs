@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
    public void GameRestart()
     {
         Debug.Log("Restart the game");
-        SceneManager.LoadScene("My Game");
+        SceneManager.LoadScene("My Game.");
     }
 
 }

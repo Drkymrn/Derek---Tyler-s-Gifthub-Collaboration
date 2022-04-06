@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 {
    private Rigidbody projectileRB;
    public GameObject Enemy;
+   public float speed;
     
     void Awake()
     {
@@ -15,21 +16,23 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
+        
         //destroy the projectile when it reach a distance of 1000.0f from the origin
-        if(transform.position.magnitude > 1000.0f)
-            Destroy(gameObject);
+       if(transform.position.magnitude > 1000.0f)
+           Destroy(gameObject);
     }
 
     //called by the player controller after it instantiate a new projectile to launch it.
     public void Launch(Vector3 direction, float force)
     {
-        projectileRB.AddForce(direction * force);
+       projectileRB.AddForce(direction * force);
+        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider other)
+   void OnTriggerEnter(Collider other)
     {
         //Enemy = other.collider.GetComponent<Enemy>();
-        if(other.tag == "Enemy")
+        if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
         }
