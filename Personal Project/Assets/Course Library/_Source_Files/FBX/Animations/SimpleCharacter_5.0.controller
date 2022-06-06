@@ -117,6 +117,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Left
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Movement
@@ -8440,7 +8446,7 @@ AnimatorStateMachine:
     m_Position: {x: -204, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110229786}
-    m_Position: {x: -288, y: 348, z: 0}
+    m_Position: {x: -264, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110221837}
     m_Position: {x: -96, y: 408, z: 0}

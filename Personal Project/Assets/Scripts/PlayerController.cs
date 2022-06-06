@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,10 +31,14 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public ParticleSystem hitParticle;
     Vector3 lookDirection = new Vector3(1, 0);
+
+    //animation
+    Animator playerAnim;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim =GetComponent<Animator>();
         Debug.Log("Health: " + currentHealth + "/" + maxHealth);
     }
 
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            playerAnim.SetTrigger("Jump_trig");
         }
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
@@ -53,7 +58,7 @@ public class PlayerController : MonoBehaviour
           LaunchProjectile();
         }
         //rotate player
-        transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
+        //transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
 
         //move player forward and backwards based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
@@ -61,7 +66,16 @@ public class PlayerController : MonoBehaviour
          
         //move left to right
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * turnSpeed);
+        if (horizontalInput < 0f )
+        {
+            Debug.Log("Going Left");
+            transform.rotation = Quaternion.Euler(0, 180, 0);
 
+
+        }else {
+            
+        }
+            
         //keep player inbounds on x axis
         if(transform.position.x < -xRange)
         {
@@ -81,6 +95,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
+         // ============== ANIMATION =======================
+
+        //playerAnim.SetFloat("Walk", lookDirection.x);
+        //playerAnim.SetFloat("Walk_Static", lookDirection.y);
 
     }
 
@@ -92,9 +110,10 @@ public class PlayerController : MonoBehaviour
          if (collision.transform.CompareTag("Obstacle"))
         {
             uiController.ShowGameOverScreen();
+            
         }
         }
-         private void OnTriggerEnter2D(Collider2D collision)
+         private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Collectable")) {
             collectedCoins++;

@@ -1033,6 +1033,12 @@ MonoBehaviour:
   uiController: {fileID: 0}
   jumpForce: 50
   RotateSpeed: 3
+  maxHealth: 5
+  timeInvincible: 2
+  respawnPosition: {fileID: 0}
+  projectilePrefab: {fileID: 8264723745369234966, guid: d92dba45161c2441e988a72007fb3d7d,
+    type: 3}
+  hitParticle: {fileID: 0}
 --- !u!54 &1164537360025472300
 Rigidbody:
   m_ObjectHideFlags: 0
